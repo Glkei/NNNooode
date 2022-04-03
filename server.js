@@ -4,16 +4,14 @@ const app = express()
 const http = require('http')
 const server = http.createServer(app)
 const io = require('socket.io')(server)
-const port = 8000
+const port = 8001
 
-app.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/index.html')
-})
+const db = require('./sourse/database')
+const indexRouter = require('./routes/indexRouter')
+const chatRouter = require('./routes/chatRouter')
 
-
-app.get('/chat/:id',(req,res)=>{
-    res.sendFile(__dirname + '/chat.html')
-})
+app.use('/',indexRouter)
+app.use('/chat',chatRouter)
 
 io.on('connection',(socket) => {
 

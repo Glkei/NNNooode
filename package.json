@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start":"sudo service mysql start",
+    "stop":"sudo service mysql stop",
+    "mysql":"mysql -u root -p"
   },
   "keywords": [],
   "author": "",
