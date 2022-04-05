@@ -6,7 +6,7 @@ const server = http.createServer(app)
 const io = require('socket.io')(server)
 const port = 8000
 
-const db = require('./sourse/database')
+const db = require('./databases/database')
 const indexRouter = require('./routes/indexRouter')
 const chatRouter = require('./routes/chatRouter')
 const createRouter = require('./routes/createRouter')
