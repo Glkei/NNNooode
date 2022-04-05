@@ -5,16 +5,18 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start":"sudo service mysql start",
-    "stop":"sudo service mysql stop",
-    "mysql":"mysql -u root -p"
+    "start": "sudo service mysql start",
+    "stop": "sudo service mysql stop",
+    "mysql": "mysql -u root -p"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.1.3",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "mongoose": "^6.2.10",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.1"
