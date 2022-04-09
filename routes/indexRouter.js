@@ -1,9 +1,16 @@
 const express = require('express')
 const router = express.Router()
+const Chat = require('../models/chatModel')
+
 
 router.get('/',(req,res)=>{
 
-    res.sendFile('/mnt/c/Users/kjun9/Desktop/nvm/tryNodejs/public/index.html')
+    Chat.find().sort({ createdAt: -1 })
+        .then((result) => {
+            res.render( 'index', { datas: result })})
+        .catch((err) => {
+            console.log(err);
+        })  
 })
 
 module.exports = router

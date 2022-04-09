@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,16 @@
 <body>
     <p>Hi This is home page. choose your chat room what you wanna join. or make your chat room</p>
     <a href="/create/chat">チャット作成</a>
-    <div><a href="/chat/1">ルーム１</a></div>
-    <div><a href="/chat/2">ルーム２</a></div>
-</body>
-</html> -->
+    <% if ( datas.length > 0) { %> 
+      <% datas.array.forEach(data => { %>
+        <div>
+
+          <h3><a href="/chat/<%= data.id %>  %> "><%= data.title %></a></h3> 
+          
+        </div>
+      <% }) %>  
+    <% }else{ %>
+        <p>妥当する投稿が見つかりませんでした....</p>    
+    <% } %> 
+    </body>
+</html>
